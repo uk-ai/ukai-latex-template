@@ -1,0 +1,30 @@
+% ukai.sty: Custom Style for AI Conference
+
+% Basic Settings
+\ProvidesPackage{myconference}
+\RequirePackage{amsmath, amssymb, graphicx, hyperref, xcolor, natbib}
+
+% Custom Margins
+\RequirePackage[margin=1in]{geometry}
+
+% Title Formatting
+\newcommand{\customtitle}[1]{\LARGE\bfseries #1}
+\newcommand{\customauthor}[1]{\large\textit{#1}}
+
+% Conference Info Macros
+\newcommand{\confname}{\textbf{AI Conference 2024}}
+\newcommand{\conflocation}{Location: TBD}
+
+% Abstract Environment
+\renewenvironment{abstract}{\vspace{10pt}\noindent\textbf{Abstract:}}{\vspace{10pt}}
+
+% Keywords Command
+\newcommand{\keywords}[1]{\textbf{Keywords:} #1}
+
+% Custom Section Headers
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection.}{0.5em}{}
+
+% Bibliography Style
+\renewcommand{\bibsection}{\section*{References}}
