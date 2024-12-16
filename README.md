@@ -20,6 +20,6 @@ git clone https://github.com/uk-ai/ukai-latex-template.git
 pdflatex template.tex
 ```
 
-You can also open the template in an editor like Overleaf and create your own copy for your paper.
+You can also open the template in Overleaf and create your own copy for your submission.
 
 [Open in Overleaf](https://www.overleaf.com/read/mqvjzzsnkzsg#5993c1)
