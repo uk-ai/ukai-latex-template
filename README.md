@@ -4,7 +4,7 @@ This repository provides a LaTeX template and style for AI conference proceeding
 
 ## Files
 - `template.tex`: Main LaTeX template.
-- `myconference.sty`: Custom style file for formatting.
+- `ukai.sty`: Custom style file for formatting.
 - `references.bib`: Placeholder bibliography.
 
 ## Usage
@@ -20,4 +20,4 @@ git clone https://github.com/uk-ai/ukai-latex-template.git
 pdflatex template.tex
 ```
 
-[Open in Overleaf](https://www.overleaf.com/docs#<project-link>)
+[Open in Overleaf](https://www.overleaf.com/read/mqvjzzsnkzsg#5993c1)
