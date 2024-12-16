@@ -1,31 +1,79 @@
-\documentclass{article}
+\documentclass[twoside]{article}
 \usepackage{ukai}
 
-\title{Your Paper Title}
+\title{\customtitle{Your Paper Title}}
+
+\setauthorsshort{Author One et al.}
+
+
 \author{
-    \customauthor{Author Name} \\
-    \textit{Affiliation} \\
-    Email: author@example.com
-    \and
-    \customauthor{Author Name} \\
-    \textit{Affiliation} \\
-    Email: author@example.com}
+    Author One$^1$, Author Two$^2$, Author Three$^1$ \\
+    {$^1$Affiliation One, $^2$Affiliation Two} \\
+    \texttt{author.one@example.com, author.two@example.com, author.three@example.com}
+}
+
 \date{}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-This document provides a template for authors submitting to \confname. The abstract should summarize the key contributions of the paper.
+This is the abstract. It summarises the key contributions of the paper.
 \end{abstract}
 
-\keywords{keyword1, keyword2, keyword3}
+\keywords{keyword 1, keyword 2, keyword 3}
 
 \section{Introduction}
-Introduction text goes here.
 
-% Other sections...
+Introduce the content of the paper here. Cite references using \cite{example}. The following sections are samples of how to include different content in the paper.
 
-\bibliographystyle{plainnat}
+\section{Mathematical Notation}
+
+Equations can be written using the \texttt{align} environment for multi-line equations:
+
+\begin{align}
+    E &= mc^2 \\
+    F &= ma
+\end{align}
+
+Or the \texttt{equation} environment for single-line equations:
+
+\begin{equation}
+    \nabla \cdot \vec{E} = \frac{\rho}{\varepsilon_0}
+\end{equation}
+
+\section{Figures}
+
+Include figures using \texttt{graphicx}:
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{example-image}
+    \caption{This is a sample figure. Replace \texttt{example-image} with your file.}
+    \label{fig:example}
+\end{figure}
+
+\section{Algorithms}
+
+Pseudocode can be included using the \texttt{algorithm} and \texttt{algorithmic} packages:
+
+\begin{algorithm}
+\caption{Sample Algorithm}
+\label{alg:example}
+\begin{algorithmic}[1]
+\STATE Initialize $x \gets 0$
+\FOR{$i \gets 1$ to $n$}
+    \STATE $x \gets x + i$
+\ENDFOR
+\RETURN $x$
+\end{algorithmic}
+\end{algorithm}
+
+\section{Conclusion}
+
+Summarize the contributions of your paper.
+
+\bibliographystyle{ieeetr}
 \bibliography{references}
+
 \end{document}

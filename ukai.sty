@@ -1,19 +1,32 @@
 % ukai.sty: Custom Style for AI Conference
 
 % Basic Settings
-\ProvidesPackage{myconference}
-\RequirePackage{amsmath, amssymb, graphicx, hyperref, xcolor, natbib}
+\ProvidesPackage{ukai}
+\RequirePackage{amsmath, amssymb, graphicx, hyperref, xcolor, cite}
 
 % Custom Margins
 \RequirePackage[margin=1in]{geometry}
 
 % Title Formatting
-\newcommand{\customtitle}[1]{\LARGE\bfseries #1}
-\newcommand{\customauthor}[1]{\large\textit{#1}}
+\newcommand{\customtitle}[1]{\LARGE\bfseries\centerline{\rule{\textwidth}{0.4pt}}\vspace{5pt}\centerline{#1}\vspace{5pt}\centerline{\rule{\textwidth}{0.4pt}}}
+\newcommand{\customauthors}[1]{\large\centerline{#1}}
 
 % Conference Info Macros
-\newcommand{\confname}{\textbf{AI Conference 2024}}
-\newcommand{\conflocation}{Location: TBD}
+\newcommand{\confname}{UK AI Conference 2024}
+
+% Headers and Footers
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\confname}
+\fancyhead[RO]{\textit{\authorsshort}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Author Short Names
+\newcommand{\authorsshort}{}
+\newcommand{\setauthorsshort}[1]{\renewcommand{\authorsshort}{#1}}
 
 % Abstract Environment
 \renewenvironment{abstract}{\vspace{10pt}\noindent\textbf{Abstract:}}{\vspace{10pt}}
@@ -26,5 +39,20 @@
 \titleformat{\section}{\Large\bfseries}{\thesection.}{0.5em}{}
 \titleformat{\subsection}{\large\bfseries}{\thesubsection.}{0.5em}{}
 
-% Bibliography Style
-\renewcommand{\bibsection}{\section*{References}}
+% Equation Numbering by Section
+\numberwithin{equation}{section}
+
+% Algorithm Support
+\RequirePackage{algorithm}
+\RequirePackage{algorithmic}
+\floatname{algorithm}{Algorithm}
+\renewcommand{\listalgorithmname}{List of Algorithms}
+
+% Figure Caption Formatting
+\usepackage{caption}
+\captionsetup{font=small, labelfont=bf, labelsep=period}
+
+% Float Placement
+\setlength{\textfloatsep}{10pt plus 1.0pt minus 2.0pt}
+\setlength{\floatsep}{8pt plus 1.0pt minus 2.0pt}
+\setlength{\intextsep}{8pt plus 1.0pt minus 2.0pt}
