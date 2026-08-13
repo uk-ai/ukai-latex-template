@@ -12,7 +12,9 @@
 \newcommand{\customauthors}[1]{\large\centerline{#1}}
 
 % Conference Info Macros
-\newcommand{\confname}{UK AI Conference 2026}
+% Year follows the TeX compile year (\the\year). Override if needed, e.g. \renewcommand{\confyear}{2026}
+\newcommand{\confyear}{\the\year}
+\newcommand{\confname}{UK AI Conference \confyear}
 
 % Headers and Footers
 \RequirePackage{fancyhdr}
